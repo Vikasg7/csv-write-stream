@@ -7,14 +7,14 @@
    `npm install git+https://github.com/Vikasg7/csv-write-stream.git`  
 
 - ### Usage (in TypeScript)  
-````javascript  
+   ````javascript  
    import { CreateStream } from "csv-write-stream"
-   
+
    const Writer = CreateStream("path-to-file.csv")
 
    // row1 must be a javascript object with headings as key and cell values as value
    const row1 = {head1: "Value1", head2: "Value2", head3: "Value3"}
-   
+
    // To write data to csv file
    Writer.write(row1)
 
@@ -34,7 +34,7 @@
    import { CsvWriteStream } from "csv-write-stream"
    const CWS = new CsvWriteStream()
    ParentStream.pipe(CWS).pipe(ChildStream)
-````
+   ````
 
 - ### Example
    Check the tests folder in src folder for an example.
