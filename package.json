@@ -1,8 +1,9 @@
 {
   "name": "csv-write-stream",
   "version": "0.0.1",
-  "description": "Nodejs Transform stream impelementation to csv files",
+  "description": "Nodejs Transform stream impelementation to write csv files",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "install": "node_modules/.bin/tsc"
   },

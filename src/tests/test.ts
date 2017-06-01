@@ -1,5 +1,4 @@
 import { CreateStream } from "../index"
-import { createWriteStream } from "graceful-fs"
 
 const writer = CreateStream("output/test.csv")
 
