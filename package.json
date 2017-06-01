@@ -1,0 +1,25 @@
+{
+  "name": "csv-write-stream",
+  "version": "0.0.1",
+  "description": "Nodejs Transform stream impelementation to csv files",
+  "main": "dist/index.js",
+  "scripts": {
+    "install": "node_modules/.bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vikasg7/csv-write-stream"
+  },
+  "keywords": [
+    "csv-stream"
+  ],
+  "author": "Vikas Gautam <v33vikasgautam@gmail.com> (http://mytrikks.blogspot.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "@types/graceful-fs": "latest",
+    "graceful-fs": "latest"
+  }
+}
