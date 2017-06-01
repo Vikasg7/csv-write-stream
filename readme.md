@@ -36,5 +36,8 @@
    ParentStream.pipe(CWS).pipe(ChildStream)
 ````
 
+- ### Example
+   Check the tests folder in src folder for an example.
+
 - ### Todo
    Writting headers as first line instead of lastLine
