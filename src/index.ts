@@ -29,6 +29,7 @@ export class CsvWriteStream extends Transform {
 
    _flush(done: (data?: any) => void) {
       this.push(this.headings.join(",") + "\r\n")
+      this.headings = null
       done()
    }
 
