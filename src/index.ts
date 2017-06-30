@@ -3,21 +3,21 @@ import { createWriteStream } from "graceful-fs"
 
 export class CsvWriteStream extends Transform {
 
-   headings: Array<string> = []
+   private _headings: Array<string>
 
    constructor() {
       super({objectMode: true})
    }
 
    _transform(data: any, enc: string, done: (data?: any) => void) {
-      if (!this.headings) this.headings = Object.keys(data)
+      if (!this._headings) this._headings = Object.keys(data)
 
       const row = []
       for (const key in data) {
-         let i = this.headings.indexOf(key)
+         let i = this._headings.indexOf(key)
          if (i < 0) {
-            i = this.headings.length
-            this.headings.push(key)
+            i = this._headings.length
+            this._headings.push(key)
          }
          row[i] = (data[key] || "").toString().replace(/"/g, '""') // escaping double quotes "
       }
@@ -28,8 +28,8 @@ export class CsvWriteStream extends Transform {
    }
 
    _flush(done: (data?: any) => void) {
-      this.push(this.headings.join(",") + "\r\n")
-      this.headings = null
+      this.push(this._headings.join(",") + "\r\n")
+      this._headings = null
       done()
    }
 
